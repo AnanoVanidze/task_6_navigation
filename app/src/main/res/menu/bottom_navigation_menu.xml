@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/balance_icon"
+        android:enabled="true"
+        android:icon="@drawable/ic_donut_small_24_px"
+        android:title="@string/balance"/>
+
+    <item
+        android:id="@+id/transfer_icon"
+        android:enabled="true"
+        android:icon="@drawable/ic_swap_vertical_circle_24_px"
+        android:title="@string/transfer"/>
+
+    <item
+        android:id="@+id/accounts_icon"
+        android:enabled="true"
+        android:icon="@drawable/ic_view_agenda_24_px"
+        android:title="@string/accounts"/>
+
+    <item
+        android:id="@+id/profile_icon"
+        android:enabled="true"
+        android:icon="@drawable/ic_account_box_24_px"
+        android:title="@string/profile"/>
+</menu>
