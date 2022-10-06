@@ -1,6 +1,5 @@
 package com.example.task_6_navigation
 
-
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,18 +13,6 @@ class BalanceFragment : Fragment() {
 
     private var _binding: FragmentBalanceBinding? = null
     private val binding get() = _binding!!
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-
-        setFragmentResultListener("requestKey") { requestKey, bundle ->
-            val result = bundle.getString("bundleKey")
-                binding.resultTv.text = result
-
-        }
-    }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,17 +28,22 @@ class BalanceFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
+        setFragmentResultListener("requestKey") { requestKey, bundle ->
+            val result = bundle.getString("bundleKey")
+            binding.resultTv.text = result
+
+        }
+
         binding.openBottomSheetBtn.setOnClickListener {
             showBottomSheet()
-
-
         }
     }
     private fun showBottomSheet(){
+
         val action = BalanceFragmentDirections.actionBalanceFragmentToBottomSheetFragment()
         findNavController().navigate(action)
-
     }
+
 
 
 
@@ -60,5 +52,7 @@ class BalanceFragment : Fragment() {
         _binding = null
 
     }
+
+
 
 }

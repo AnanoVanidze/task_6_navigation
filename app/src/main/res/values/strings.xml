@@ -10,4 +10,6 @@
     <string name="accounts_fragment">Accounts Fragment</string>
     <string name="transfer_fragment">Transfer Fragment</string>
     <string name="open_bottom_sheet">open bottom sheet</string>
+    <string name="camera">camera</string>
+    <string name="audio">audio</string>
 </resources>

@@ -3,6 +3,8 @@ package com.example.task_6_navigation
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.example.task_6_navigation.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -14,24 +16,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        binding.bottomNavigation.setupWithNavController(navHostFragment.navController)
 
-        binding.bottomNavigation.setOnItemSelectedListener { item ->
-
-            when(item.itemId){
-                R.id.balance_icon -> replaceFragment(BalanceFragment())
-                R.id.accounts_icon->replaceFragment((AccountsFragment()))
-                R.id.transfer_icon->replaceFragment(TransferFragment())
-                R.id.profile_icon->replaceFragment(ProfileFragment())
-            }
-            true
-        }
-    }
-
-    private fun replaceFragment(fragment: Fragment){
-
-            supportFragmentManager.beginTransaction().apply {
-            replace(R.id.nav_host_fragment, fragment)
-            commit()
-        }
     }
 }
